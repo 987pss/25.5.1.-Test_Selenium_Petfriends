@@ -18,8 +18,8 @@ def testing_auth_and_all_pets_page():
         pytest.driver.find_element(By.CSS_SELECTOR, 'a[href="/login"]').click()  # Ссылка "У меня уже есть аккаунт"
         assert pytest.driver.current_url == 'https://petfriends.skillfactory.ru/login'
 
-        pytest.driver.find_element(By.ID, 'email').send_keys('987pss@gmail.com')  # Поле "Электронная почта"
-        pytest.driver.find_element(By.ID, 'pass').send_keys('Saratov.1987')  # Поле "Пароль"
+        pytest.driver.find_element(By.ID, 'email').send_keys('email')  # Поле "Электронная почта"
+        pytest.driver.find_element(By.ID, 'pass').send_keys('password')  # Поле "Пароль"
         pytest.driver.find_element(By.CLASS_NAME, 'btn.btn-success').click()  # Кнопка "Войти"
         assert pytest.driver.current_url == 'https://petfriends.skillfactory.ru/all_pets'
         assert pytest.driver.find_element(By.TAG_NAME, 'h1').text == "PetFriends"
