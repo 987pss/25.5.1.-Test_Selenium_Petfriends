@@ -50,8 +50,8 @@ def testing_auth_and_my_pets_page():
         WebDriverWait(pytest.driver, 10).until(EC.element_to_be_clickable((By.ID, 'pass')))
         WebDriverWait(pytest.driver, 10).until(EC.element_to_be_clickable((By.CLASS_NAME, 'btn.btn-success')))
         # Поля "Электронная почта" и "Пароль", кнопка "Войти"
-        pytest.driver.find_element(By.ID, 'email').send_keys('987pss@gmail.com')
-        pytest.driver.find_element(By.ID, 'pass').send_keys('Saratov.1987')
+        pytest.driver.find_element(By.ID, 'email').send_keys('email')
+        pytest.driver.find_element(By.ID, 'pass').send_keys('password')
         pytest.driver.find_element(By.CLASS_NAME, 'btn.btn-success').click()  # Кнопка "Войти"
         assert pytest.driver.current_url == 'https://petfriends.skillfactory.ru/all_pets'
         assert pytest.driver.find_element(By.TAG_NAME, 'h1').text == "PetFriends"
