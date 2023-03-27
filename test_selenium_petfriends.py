@@ -107,6 +107,7 @@ class TestMyPetsPage:
         # Статистика пользователя
         user_statistics_str = pytest.driver.find_element(By.XPATH, '//div[@class=".col-sm-4 left"]').text
         user_statistics_list = user_statistics_str.split('\n')
+        my_pets_count_statistics = None
 
         for i in user_statistics_list:
             if 'Питомцев' in i:
